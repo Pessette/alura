@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colégio Estadual do Campo Castelo Branco</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --verde-escuro: #24382b;
+            --verde: #355943;
+            --verde-medio: #587462;
+            --verde-claro: #e9f0eb;
+            --fundo: #f7f8f5;
+            --branco: #ffffff;
+            --texto: #29342d;
+            --cinza: #707a73;
+            --dourado: #b69b62;
+            --dourado-claro: #d7c49b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--fundo);
+            color: var(--texto);
+            line-height: 1.7;
+        }
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
+
+        header {
+            position: relative;
+            background:
+                linear-gradient(
+                    rgba(30, 50, 38, 0.95),
+                    rgba(36, 56, 43, 0.98)
+                );
+            color: white;
+            text-align: center;
+            padding: 105px 25px 100px;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 50%;
+            top: -100px;
+            left: -80px;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            width: 330px;
+            height: 330px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 50%;
+            bottom: -190px;
+            right: -100px;
+        }
+
+        .linha-decorativa {
+            width: 55px;
+            height: 3px;
+            background: var(--dourado);
+            margin: 0 auto 25px;
+            border-radius: 10px;
+        }
+
+        header h1 {
+            position: relative;
+            z-index: 1;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(32px, 6vw, 52px);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            position: relative;
+            z-index: 1;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            letter-spacing: 0.4px;
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        section {
+            max-width: 1050px;
+            margin: auto;
+            padding: 78px 25px;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .titulo::before {
+            content: "✦";
+            display: block;
+            color: var(--dourado);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .titulo h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(28px, 4vw, 36px);
+            color: var(--verde-escuro);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .titulo p {
+            color: var(--cinza);
+            font-size: 16px;
+        }
+
+        /* =========================
+           SOBRE A ESCOLA
+        ========================= */
+
+        .resumo {
+            background: var(--branco);
+            padding: 42px;
+            border-radius: 20px;
+            border: 1px solid rgba(53, 89, 67, 0.10);
+            box-shadow: 0 12px 35px rgba(36, 56, 43, 0.08);
+            position: relative;
+        }
+
+        .resumo::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 35px;
+            right: 35px;
+            height: 3px;
+            background: var(--dourado);
+            border-radius: 0 0 10px 10px;
+        }
+
+        .resumo p {
+            margin-bottom: 19px;
+            color: #4d5750;
+        }
+
+        .resumo p:last-child {
+            margin-bottom: 0;
+        }
+
+        .resumo strong {
+            color: var(--verde);
+        }
+
+        /* =========================
+           INFORMAÇÕES DA ESCOLA
+        ========================= */
+
+        .informacoes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 25px 22px;
+            border-radius: 16px;
+            border: 1px solid rgba(53, 89, 67, 0.10);
+            box-shadow: 0 8px 22px rgba(36, 56, 43, 0.06);
+        }
+
+        .info-card span {
+            display: block;
+            color: var(--dourado);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .info-card h3 {
+            color: var(--verde-escuro);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 20px;
+            margin-bottom: 7px;
+        }
+
+        .info-card p {
+            color: var(--cinza);
+            font-size: 14px;
+        }
+
+        /* =========================
+           TOUR
+        ========================= */
+
+        .tour {
+            max-width: none;
+            background:
+                linear-gradient(
+                    180deg,
+                    #e9f0eb 0%,
+                    #f4f7f4 100%
+                );
+            border-top: 1px solid rgba(53, 89, 67, 0.08);
+            border-bottom: 1px solid rgba(53, 89, 67, 0.08);
+        }
+
+        .tour-conteudo {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* =========================
+           CARDS DO TOUR
+        ========================= */
+
+        .espacos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .espaco {
+            position: relative;
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba(53, 89, 67, 0.11);
+            border-radius: 18px;
+            padding: 24px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(36, 56, 43, 0.07);
+        }
+
+        .espaco:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 32px rgba(36, 56, 43, 0.12);
+            border-color: rgba(182, 155, 98, 0.55);
+        }
+
+        .numero {
+            color: var(--dourado);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .espaco h3 {
+            color: var(--verde-escuro);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 5px 0 7px;
+        }
+
+        .espaco p {
+            color: var(--cinza);
+            font-size: 14px;
+            padding-right: 35px;
+        }
+
+        .explorar {
+            position: absolute;
+            right: 22px;
+            bottom: 24px;
+            color: var(--verde);
+            font-size: 20px;
+            transition: transform 0.25s ease;
+        }
+
+        .espaco:hover .explorar {
+            transform: translateX(5px);
+        }
+
+        /* =========================
+           JANELA DOS VÍDEOS
+        ========================= */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(24, 37, 29, 0.82);
+            backdrop-filter: blur(7px);
+            padding: 25px;
+            overflow-y: auto;
+        }
+
+        .modal.ativo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-conteudo {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            max-height: 94vh;
+            overflow-y: auto;
+            background: #f8faf8;
+            border-radius: 22px;
+            padding: 35px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.30);
+            animation: aparecer 0.3s ease;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .fechar {
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            width: 38px;
+            height: 38px;
+            border: none;
+            border-radius: 50%;
+            background: var(--verde-claro);
+            color: var(--verde-escuro);
+            font-size: 22px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .fechar:hover {
+            background: var(--verde);
+            color: white;
+        }
+
+        .modal-titulo {
+            padding-right: 45px;
+            margin-bottom: 25px;
+        }
+
+        .modal-titulo span {
+            color: var(--dourado);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .modal-titulo h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--verde-escuro);
+            font-size: 32px;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .videos-modal {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .video-box {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(36, 56, 43, 0.08);
+        }
+
+        .video-box video {
+            width: 100%;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 10px;
+            background: #111;
+        }
+
+        .voltar {
+            display: block;
+            margin: 25px auto 0;
+            border: 1px solid rgba(53, 89, 67, 0.2);
+            background: white;
+            color: var(--verde);
+            padding: 10px 22px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .voltar:hover {
+            background: var(--verde);
+            color: white;
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            background: var(--verde-escuro);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer p:first-child {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        footer p:last-child {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 13px;
+        }
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            header {
+                padding: 75px 20px;
+            }
+
+            section {
+                padding: 55px 18px;
+            }
+
+            .resumo {
+                padding: 30px 24px;
+            }
+
+            .informacoes {
+                grid-template-columns: 1fr;
+            }
+
+            .espacos {
+                grid-template-columns: 1fr;
+            }
+
+            .videos-modal {
+                grid-template-columns: 1fr;
+            }
+
+            .modal {
+                padding: 12px;
+            }
+
+            .modal-conteudo {
+                padding: 25px 18px;
+            }
+
+            .modal-titulo h2 {
+                font-size: 27px;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            header h1 {
+                font-size: 31px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .titulo h2 {
+                font-size: 28px;
+            }
+
+            .resumo {
+                padding: 26px 20px;
+            }
+
+            .espaco {
+                padding: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- =========================
+         CABEÇALHO
+    ========================= -->
+
+    <header>
+
+        <div class="linha-decorativa"></div>
+
+        <h1>
+            Colégio Estadual do Campo Castelo Branco
+        </h1>
+
+        <p>
+            Conheça um pouco mais sobre a nossa escola
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         SOBRE A ESCOLA
+    ========================= -->
+
+    <section>
+
+        <div class="titulo">
+
+            <h2>
+                Sobre a nossa escola
+            </h2>
+
+            <p>
+                Um pouco da nossa rotina, organização e identidade escolar.
+            </p>
+
+        </div>
+
+
+        <div class="resumo">
+
+            <p>
+                O <strong>Colégio Estadual do Campo Castelo Branco</strong>
+                é uma escola de período integral que busca proporcionar
+                aos estudantes uma formação ampla, unindo os conhecimentos
+                das diferentes áreas do ensino ao desenvolvimento pessoal,
+                à convivência e à participação na comunidade escolar.
+            </p>
+
+            <p>
+                A rotina escolar acontece das
+                <strong>7h20 às 11h30</strong> no período da manhã e das
+                <strong>12h55 às 17h</strong> no período da tarde.
+                Durante esse período, os estudantes participam das aulas,
+                atividades e diferentes momentos de aprendizagem.
+            </p>
+
+            <p>
+                A escola também conta com momentos de recreio ao longo do
+                dia. Pela manhã, o recreio acontece das
+                <strong>9h às 9h15</strong> e, à tarde, das
+                <strong>15h15 às 15h30</strong>.
+            </p>
+
+            <p>
+                Por ser uma escola de período integral, os estudantes
+                também permanecem na instituição durante o horário do
+                <strong>almoço</strong>. Os alunos que estão na escola
+                naquele dia realizam a refeição juntos, fortalecendo
+                momentos de convivência e integração.
+            </p>
+
+            <p>
+                A organização do período integral acontece de acordo com
+                os dias da semana. Às <strong>segundas e quartas-feiras</strong>,
+                permanecem durante todo o dia os estudantes do
+                <strong>6º, 7º e 8º anos do Ensino Fundamental</strong>.
+            </p>
+
+            <p>
+                Já às <strong>terças e quintas-feiras</strong>, permanecem
+                em período integral os estudantes do
+                <strong>Ensino Médio e do 9º ano do Ensino Fundamental</strong>.
+                Dessa forma, a escola organiza sua rotina considerando
+                as diferentes etapas de ensino.
+            </p>
+
+            <p>
+                Outro aspecto importante é o
+                <strong>protagonismo dos estudantes</strong>. A proposta
+                busca incentivar a participação, a criatividade, a
+                responsabilidade e o envolvimento dos alunos na vida
+                escolar, tornando-os parte ativa do processo de aprendizagem.
+            </p>
+
+            <p>
+                Mais do que um espaço destinado às aulas, a escola é
+                também um ambiente de convivência, troca de experiências,
+                desenvolvimento de habilidades e construção de novas
+                possibilidades para o futuro.
+            </p>
+
+        </div>
+
+
+        <div class="informacoes">
+
+            <div class="info-card">
+
+                <span>Rotina</span>
+
+                <h3>
+                    Período Integral
+                </h3>
+
+                <p>
+                    Atividades escolares durante os períodos da manhã
+                    e da tarde.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>Convivência</span>
+
+                <h3>
+                    Almoço na escola
+                </h3>
+
+                <p>
+                    Um momento de convivência entre os estudantes
+                    que permanecem na instituição.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>Participação</span>
+
+                <h3>
+                    Protagonismo
+                </h3>
+
+                <p>
+                    Incentivo à participação, criatividade e
+                    responsabilidade dos estudantes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TOUR ONLINE
+    ========================= -->
+
+    <section class="tour">
+
+        <div class="tour-conteudo">
+
+            <div class="titulo">
+
+                <h2>
+                    Tour Online
+                </h2>
+
+                <p>
+                    Explore os espaços do Colégio Estadual do Campo Castelo Branco.
+                    Clique em um ambiente para conhecer seus vídeos.
+                </p>
+
+            </div>
+
+
+            <div class="espacos">
+
+
+                <!-- 1 -->
+
+                <button class="espaco" onclick="abrirModal(1)">
+
+                    <span class="numero">
+                        01
+                    </span>
+
+                    <h3>
+                        Entrada
+                    </h3>
+
+                    <p>
+                        Começando o nosso tour pela entrada da escola.
+                    </p>
+
+                    <span class="explorar">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- 2 -->
+
+                <button class="espaco" onclick="abrirModal(2)">
+
+                    <span class="numero">
+                        02
+                    </span>
+
+                    <h3>
+                        Diretoria
+                    </h3>
+
+                    <p>
+                        Conhecendo a diretoria da escola.
+                    </p>
+
+                    <span class="explorar">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- 3 -->
+
+                <button class="espaco" onclick="abrirModal(3)">
+
+                    <span class="numero">
+                        03
+                    </span>
+
+                    <h3>
+                        Sala dos Professores
+                    </h3>
+
+                    <p>
+                        Conhecendo a Sala dos Professores.
+                    </p>
+
+                    <span class="explorar">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- 4 -->
+
+                <button class="espaco" onclick="abrirModal(4)">
+
+                    <span class="numero">
+                        04
+                    </span>
+
+                    <h3>
+                        Biblioteca
+                    </h3>
+
+                    <p>
+                        Conhecendo a Biblioteca.
+                    </p>
+
+                    <span class="explorar">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- 5 -->
+
+                <button class="espaco" onclick="abrirModal(5)">
+
+                    <span class="numero">
+                        05
+                    </span>
+
+                    <h3>
+                        Sala de Exatas
+                    </h3>
+
+                    <p>
+                        Conhecendo a Sala de Exatas.
+                    </p>
+
+                    <span class="explorar">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- 6 -->
+
+                <button class="espaco" onclick="abrirModal(6)">
+
+                    <span class="numero">
+                        06
+                    </span>
+
+                    <h3>
+                        Sala de linguagens
+                    </h3>
+
+                    <p>
+                        Conhecendo a Sala de linguagens.
+                    </p>
+
+                    <span class="explorar">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- 7 -->
+
+                <button class="espaco" onclick="abrirModal(7)">
+
+                    <span class="numero">
+                        07
+                    </span>
+
+                    <h3>
+                        Sala de Ciências Humanas
+                    </h3>
+
+                    <p>
+                        Conhecendo a Sala de Ciência Humana.
+                    </p>
+
+                    <span class="explorar">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- 8 -->
+
+                <button class="espaco" onclick="abrirModal(8)">
+
+                    <span class="numero">
+                        08
+                    </span>
+
+                    <h3>
+                        Sala de Artes
+                    </h3>
+
+                    <p>
+                        Conhecendo a Sala de Artes.
+                    </p>
+
+                    <span class="explorar">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- 9 -->
+
+                <button class="espaco" onclick="abrirModal(9)">
+
+                    <span class="numero">
+                        09
+                    </span>
+
+                    <h3>
+                        Laboratorio de ciência
+                    </h3>
+
+                    <p>
+                        Conhecendo o laboratorio de ciência.
+                    </p>
+
+                    <span class="explorar">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- 10 -->
+
+                <button class="espaco" onclick="abrirModal(10)">
+
+                    <span class="numero">
+                        10
+                    </span>
+
+                    <h3>
+                        Laboratorio de informatica
+                    </h3>
+
+                    <p>
+                        Conhecendo o laboratorio de informatica.
+                    </p>
+
+                    <span class="explorar">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- 11 -->
+
+                <button class="espaco" onclick="abrirModal(11)">
+
+                    <span class="numero">
+                        11
+                    </span>
+
+                    <h3>
+                        Laboratorio de Informatica
+                    </h3>
+
+                    <p>
+                        Conhecendo o laboratorio de informatica.
+                    </p>
+
+                    <span class="explorar">
+                        →
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         JANELA DOS VÍDEOS
+    ========================= -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-conteudo">
+
+            <button class="fechar" onclick="fecharModal()">
+                ×
+            </button>
+
+
+            <div class="modal-titulo">
+
+                <span id="modalNumero">
+                    Tour
+                </span>
+
+                <h2 id="modalTitulo">
+                    Espaço
+                </h2>
+
+            </div>
+
+
+            <div class="videos-modal" id="videosModal">
+            </div>
+
+
+            <button class="voltar" onclick="fecharModal()">
+                ← Voltar ao Tour
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================= -->
+
+    <footer>
+
+        <p>
+            Colégio Estadual do Campo Castelo Branco
+        </p>
+
+        <p>
+            Feira Escolar • 2026
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        const espacos = {
+
+            1: {
+                numero: "01",
+                titulo: "Entrada",
+                videos: [
+                    "videos/entrada.mp4"
+                ]
+            },
+
+            2: {
+                numero: "02",
+                titulo: "Diretoria",
+                videos: [
+                    "videos/diretoria.mp4"
+                ]
+            },
+
+            3: {
+                numero: "03",
+                titulo: "Sala dos Professores",
+                videos: [
+                    "videos/sala-dos-professores.mp4"
+                ]
+            },
+
+            4: {
+                numero: "04",
+                titulo: "Biblioteca",
+                videos: [
+                    "videos/biblioteca.mp4",
+                    "videos/bibliotec.mp4"
+                ]
+            },
+
+            5: {
+                numero: "05",
+                titulo: "Sala de Exatas",
+                videos: [
+                    "videos/exatas.mp4",
+                    "videos/exata.mp4"
+                ]
+            },
+
+            6: {
+                numero: "06",
+                titulo: "Sala de linguagens",
+                videos: [
+                    "videos/linguagens.mp4",
+                    "videos/letras.mp4"
+                ]
+            },
+
+            7: {
+                numero: "07",
+                titulo: "Sala de Ciências Humanas",
+                videos: [
+                    "videos/ciencias-humanas.mp4",
+                    "videos/humanas.mp4"
+                ]
+            },
+
+            8: {
+                numero: "08",
+                titulo: "Sala de Artes",
+                videos: [
+                    "videos/artes.mp4",
+                    "videos/arte.mp4"
+                ]
+            },
+
+            9: {
+                numero: "09",
+                titulo: "Laboratorio de ciência",
+                videos: [
+                    "videos/laboratorio-de-ciencias.mp4",
+                    "videos/lab de ciencia.mp4"
+                ]
+            },
+
+            10: {
+                numero: "10",
+                titulo: "Laboratorio de informatica",
+                videos: [
+                    "videos/laboratorio.mp4",
+                    "videos/sala-dos-professores.mp4"
+                ]
+            },
+
+            11: {
+                numero: "11",
+                titulo: "Laboratorio de Informatica",
+                videos: [
+                    "videos/laboratorio-de-informatica.mp4",
+                    "videos/labinformatica.mp4"
+                ]
+            }
+
+        };
+
+
+        function abrirModal(numero) {
+
+            const espaco = espacos[numero];
+
+            const modal = document.getElementById("modal");
+            const modalNumero = document.getElementById("modalNumero");
+            const modalTitulo = document.getElementById("modalTitulo");
+            const videosModal = document.getElementById("videosModal");
+
+            modalNumero.textContent = espaco.numero;
+            modalTitulo.textContent = espaco.titulo;
+
+            videosModal.innerHTML = "";
+
+            espaco.videos.forEach(function(video) {
+
+                const caixa = document.createElement("div");
+
+                caixa.className = "video-box";
+
+                caixa.innerHTML = `
+                    <video controls>
+                        <source src="${video}" type="video/mp4">
+                        Seu navegador não consegue reproduzir este vídeo.
+                    </video>
+                `;
+
+                videosModal.appendChild(caixa);
+
+            });
+
+            modal.classList.add("ativo");
+
+            document.body.style.overflow = "hidden";
+        }
+
+
+        function fecharModal() {
+
+            const modal = document.getElementById("modal");
+
+            modal.classList.remove("ativo");
+
+            document.body.style.overflow = "auto";
+
+            document.getElementById("videosModal").innerHTML = "";
+
+        }
+
+
+        document.getElementById("modal").addEventListener("click", function(event) {
+
+            if (event.target === this) {
+
+                fecharModal();
+
+            }
+
+        });
+
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
+
+                fecharModal();
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
