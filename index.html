@@ -38,9 +38,7 @@
             line-height: 1.7;
         }
 
-        /* =========================
-           CABEÇALHO
-        ========================= */
+        /* CABEÇALHO */
 
         header {
             position: relative;
@@ -103,9 +101,7 @@
             letter-spacing: 0.4px;
         }
 
-        /* =========================
-           SEÇÕES
-        ========================= */
+        /* SEÇÕES */
 
         section {
             max-width: 1050px;
@@ -139,9 +135,7 @@
             font-size: 16px;
         }
 
-        /* =========================
-           SOBRE A ESCOLA
-        ========================= */
+        /* SOBRE A ESCOLA */
 
         .resumo {
             background: var(--branco);
@@ -176,9 +170,7 @@
             color: var(--verde);
         }
 
-        /* =========================
-           INFORMAÇÕES DA ESCOLA
-        ========================= */
+        /* INFORMAÇÕES DA ESCOLA */
 
         .informacoes {
             display: grid;
@@ -217,9 +209,7 @@
             font-size: 14px;
         }
 
-        /* =========================
-           TOUR
-        ========================= */
+        /* TOUR */
 
         .tour {
             max-width: none;
@@ -238,9 +228,7 @@
             margin: auto;
         }
 
-        /* =========================
-           CARDS DO TOUR
-        ========================= */
+        /* CARDS DO TOUR */
 
         .espacos {
             display: grid;
@@ -300,9 +288,7 @@
             transform: translateX(5px);
         }
 
-        /* =========================
-           JANELA DOS VÍDEOS
-        ========================= */
+        /* JANELA DOS VÍDEOS */
 
         .modal {
             display: none;
@@ -427,9 +413,7 @@
             color: white;
         }
 
-        /* =========================
-           RODAPÉ
-        ========================= */
+        /* RODAPÉ */
 
         footer {
             background: var(--verde-escuro);
@@ -449,9 +433,7 @@
             font-size: 13px;
         }
 
-        /* =========================
-           CELULAR
-        ========================= */
+        /* CELULAR */
 
         @media (max-width: 750px) {
 
@@ -519,10 +501,7 @@
 
 <body>
 
-
-    <!-- =========================
-         CABEÇALHO
-    ========================= -->
+    <!-- CABEÇALHO -->
 
     <header>
 
@@ -539,9 +518,7 @@
     </header>
 
 
-    <!-- =========================
-         SOBRE A ESCOLA
-    ========================= -->
+    <!-- SOBRE A ESCOLA -->
 
     <section>
 
@@ -556,7 +533,6 @@
             </p>
 
         </div>
-
 
         <div class="resumo">
 
@@ -623,7 +599,6 @@
 
         </div>
 
-
         <div class="informacoes">
 
             <div class="info-card">
@@ -641,7 +616,6 @@
 
             </div>
 
-
             <div class="info-card">
 
                 <span>Convivência</span>
@@ -656,7 +630,6 @@
                 </p>
 
             </div>
-
 
             <div class="info-card">
 
@@ -678,9 +651,7 @@
     </section>
 
 
-    <!-- =========================
-         TOUR ONLINE
-    ========================= -->
+    <!-- TOUR ONLINE -->
 
     <section class="tour">
 
@@ -699,9 +670,7 @@
 
             </div>
 
-
             <div class="espacos">
-
 
                 <!-- 1 -->
 
@@ -955,7 +924,6 @@
 
                 </button>
 
-
             </div>
 
         </div>
@@ -963,9 +931,7 @@
     </section>
 
 
-    <!-- =========================
-         JANELA DOS VÍDEOS
-    ========================= -->
+    <!-- JANELA DOS VÍDEOS -->
 
     <div class="modal" id="modal">
 
@@ -974,7 +940,6 @@
             <button class="fechar" onclick="fecharModal()">
                 ×
             </button>
-
 
             <div class="modal-titulo">
 
@@ -988,10 +953,8 @@
 
             </div>
 
-
             <div class="videos-modal" id="videosModal">
             </div>
-
 
             <button class="voltar" onclick="fecharModal()">
                 ← Voltar ao Tour
@@ -1002,9 +965,7 @@
     </div>
 
 
-    <!-- =========================
-         RODAPÉ
-    ========================= -->
+    <!-- RODAPÉ -->
 
     <footer>
 
@@ -1019,9 +980,7 @@
     </footer>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
+    <!-- JAVASCRIPT -->
 
     <script>
 
@@ -1031,7 +990,7 @@
                 numero: "01",
                 titulo: "Entrada",
                 videos: [
-                    "videos/entrada.mp4"
+                    "entrada.mp4"
                 ]
             },
 
@@ -1039,7 +998,7 @@
                 numero: "02",
                 titulo: "Diretoria",
                 videos: [
-                    "videos/diretoria.mp4"
+                    "diretoria.mp4"
                 ]
             },
 
@@ -1047,7 +1006,7 @@
                 numero: "03",
                 titulo: "Sala dos Professores",
                 videos: [
-                    "videos/sala-dos-professores.mp4"
+                    "sala-dos-professores.mp4"
                 ]
             },
 
@@ -1055,8 +1014,8 @@
                 numero: "04",
                 titulo: "Biblioteca",
                 videos: [
-                    "videos/biblioteca.mp4",
-                    "videos/bibliotec.mp4"
+                    "biblioteca.mp4",
+                    "bibliotec.mp4"
                 ]
             },
 
@@ -1064,8 +1023,8 @@
                 numero: "05",
                 titulo: "Sala de Exatas",
                 videos: [
-                    "videos/exatas.mp4",
-                    "videos/exata.mp4"
+                    "exatas.mp4",
+                    "exata.mp4"
                 ]
             },
 
@@ -1073,8 +1032,8 @@
                 numero: "06",
                 titulo: "Sala de linguagens",
                 videos: [
-                    "videos/linguagens.mp4",
-                    "videos/letras.mp4"
+                    "linguagens.mp4",
+                    "letras.mp4"
                 ]
             },
 
@@ -1082,8 +1041,8 @@
                 numero: "07",
                 titulo: "Sala de Ciências Humanas",
                 videos: [
-                    "videos/ciencias-humanas.mp4",
-                    "videos/humanas.mp4"
+                    "ciencias-humanas.mp4",
+                    "humanas.mp4"
                 ]
             },
 
@@ -1091,8 +1050,8 @@
                 numero: "08",
                 titulo: "Sala de Artes",
                 videos: [
-                    "videos/artes.mp4",
-                    "videos/arte.mp4"
+                    "artes.mp4",
+                    "arte.mp4"
                 ]
             },
 
@@ -1100,8 +1059,8 @@
                 numero: "09",
                 titulo: "Laboratorio de ciência",
                 videos: [
-                    "videos/laboratorio-de-ciencias.mp4",
-                    "videos/lab de ciencia.mp4"
+                    "laboratorio-de-ciencias.mp4",
+                    "lab de ciencia.mp4"
                 ]
             },
 
@@ -1109,8 +1068,8 @@
                 numero: "10",
                 titulo: "Laboratorio de informatica",
                 videos: [
-                    "videos/laboratorio.mp4",
-                    "videos/sala-dos-professores.mp4"
+                    "laboratorio.mp4",
+                    "sala-dos-professores.mp4"
                 ]
             },
 
@@ -1118,8 +1077,8 @@
                 numero: "11",
                 titulo: "Laboratorio de Informatica",
                 videos: [
-                    "videos/laboratorio-de-informatica.mp4",
-                    "videos/labinformatica.mp4"
+                    "laboratorio-de-informatica.mp4",
+                    "labinformatica.mp4"
                 ]
             }
 
